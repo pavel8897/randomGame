@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<table id="table">
+		
+	</table>
+</body>
+</html>
+
+<script>
+
+let table = document.querySelector('#table');
+let k = 0;
+
+for(let i=1;i<=10;i++) {
+	let tr = document.createElement('tr');
+	for(let j=1;j<=10;j++) {
+		k++;
+		let td = document.createElement('td');
+		td.innerHTML = k;
+		tr.appendChild(td);
+	}
+	table.appendChild(tr);
+}
+
+
+function randomNumber(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+}
+
+let arr = [];
+
+while(arr.length < 10) {
+	let item = arr.push(randomNumber(1, k));
+	if(arr.indexOf(item) != -1) {
+		arr.push(item);
+	}
+}
+
+console.log(arr);
+
+
+
+
+
+</script>
+
+<style>
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		padding: 0;
+		margin: 0;
+	}
+
+	table {
+		border-collapse: collapse;
+	}
+
+	table tr td {
+		padding: 10px;
+		font-size: 20px;
+		border:  1px solid #000;
+		cursor: pointer;
+		user-select: none;
+		text-align: center;
+	}
+</style>
